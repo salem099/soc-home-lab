@@ -30,6 +30,7 @@ authentication logs ingested for analysis and detection.
 |---|---|
 | [SSH Brute-Force Investigation](./SSH_Bruteforce_Investigation.md) | Full investigation of an automated SSH brute-force attack: detection in Splunk, timeline, impact analysis, and remediation recommendations. |
 
+| [Threat Hunt — SSH Brute-Force Against admin](./Threat_Hunt_SSH_Admin_Bruteforce.md) | A threat hunt triggered by a server performance alert: scoped a failed SSH brute-force attack in Splunk, confirmed no compromise, and identified the server's rate-limiting as the root cause. |
 ---
 
 ## Skills Practiced
