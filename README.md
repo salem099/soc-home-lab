@@ -31,6 +31,7 @@ authentication logs ingested for analysis and detection.
 | [SSH Brute-Force Investigation](./SSH_Bruteforce_Investigation.md) | Full investigation of an automated SSH brute-force attack: detection in Splunk, timeline, impact analysis, and remediation recommendations. |
 | [Threat Hunt — SSH Brute-Force Against admin](./Threat_Hunt_SSH_Admin_Bruteforce.md) | A threat hunt triggered by a server performance alert: scoped a failed SSH brute-force attack in Splunk, confirmed no compromise, and identified the server's rate-limiting as the root cause. |
 | [Incident — SSH Compromise with Root Access](./Incident_SSH_Compromise_Root_Access.md) | Investigation of a successful SSH brute-force that escalated to root via sudo and exfiltrated /etc/shadow. Covers detection, post-compromise command tracing, persistence check, and containment. |
+| [Incident — Windows RDP Brute-Force](./Incident_Windows_RDP_Bruteforce.md) | Investigation of an RDP brute-force attempt against a Windows host, using Event Viewer (4625/4624). Covers Windows logon artifacts (SubStatus, LogonType, WorkstationName), failure confirmation, and MITRE mapping. |
 
 ---
 
@@ -38,11 +39,12 @@ authentication logs ingested for analysis and detection.
 
 - **Linux log analysis** — `grep`, `awk`, `sort`, `uniq`, reading `/var/log/auth.log`
 - **Network traffic analysis** — Wireshark, TCP 3-way handshake, DNS, HTTP
-- **Windows Event Logs** — logon events (4624/4625), Logon Types, baselining
+- **Windows Event Logs** — logon events (4624/4625), Logon Types, SubStatus codes, baselining
 - **SIEM engineering** — installing and configuring Splunk, data ingestion, source types
 - **Detection engineering** — writing SPL queries, extracting fields with `rex`,
   building detection rules and scheduled alerts, tuning thresholds (false positives
   vs. false negatives)
+- **Threat frameworks** — mapping investigations to MITRE ATT&CK tactics and techniques
 - **Incident reporting** — structured investigation reports separating facts from
   hypotheses
 
@@ -50,10 +52,9 @@ authentication logs ingested for analysis and detection.
 
 ## Planned / In Progress
 
-- [ ] Windows Event Log investigation write-up (logon analysis)
 - [ ] Network traffic analysis case (PCAP walkthrough)
 - [ ] Detection rules collection (documented SPL queries)
-- [ ] MITRE ATT&CK mapping of lab investigations
+- [ ] Threat hunting hypothesis & report
 
 ---
 
