@@ -61,7 +61,15 @@ credential theft affecting every account on the host.
 - **Persistence check:** no new user or group was created within the attack window.
   (A `useradd`/`groupadd` for `splunk` exists in the logs but dates to 27 Oct — the
   Splunk installation — not the attack.)
+---
 
+## MITRE ATT&CK Mapping
+
+| Tactic | Technique | ID |
+|---|---|---|
+| Credential Access / Initial Access | Brute Force | T1110 |
+| Privilege Escalation | Abuse Elevation Control Mechanism: Sudo | T1548.003 |
+| Credential Access | OS Credential Dumping: /etc/shadow | T1003.008 |
 ---
 
 ## 5. Detection
