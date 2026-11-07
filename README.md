@@ -1,9 +1,9 @@
 # soc-home-lab
 
-A personal, hands-on Security Operations Center (SOC) home lab, built to practice
-blue-team skills: log analysis, threat detection, SIEM engineering, and incident
-reporting. This repository documents the projects and investigations produced in
-that lab.
+A personal, hands-on Security Operations Center (SOC) home lab and training record,
+built to practice blue-team skills: log analysis, threat detection, SIEM engineering,
+alert triage, and incident reporting. This repository documents the projects and
+investigations produced in the lab and on SOC training platforms.
 
 > All attack activity in this lab is self-generated against systems I own, in an
 > isolated environment, for training purposes only.
@@ -33,6 +33,7 @@ authentication logs ingested for analysis and detection.
 | [Incident — SSH Compromise with Root Access](./Incident_SSH_Compromise_Root_Access.md) | Investigation of a successful SSH brute-force that escalated to root via sudo and exfiltrated /etc/shadow. Covers detection, post-compromise command tracing, persistence check, and containment. |
 | [Incident — Windows RDP Brute-Force](./Incident_Windows_RDP_Bruteforce.md) | Investigation of an RDP brute-force attempt against a Windows host, using Event Viewer (4625/4624). Covers Windows logon artifacts (SubStatus, LogonType, WorkstationName), failure confirmation, and MITRE mapping. |
 | [Network Analysis — SSH Brute-Force (PCAP)](./Network_Analysis_SSH_Bruteforce_PCAP.md) | Packet-level analysis of an SSH brute-force in Wireshark using only traffic metadata. Covers a top-down methodology (Conversations, Follow Stream, SYN counting), inferring success from session size on encrypted traffic, and MITRE mapping. |
+| [SOC Alert — CVE-2024-49138 Privilege Escalation (LetsDefend)](./SOC_Alert_CVE-2024-49138_LetsDefend.md) | Tier-1 alert triage on the LetsDefend SOC platform: investigated a masqueraded process, traced an RDP brute-force and SYSTEM-level privilege escalation, verified the malware via VirusTotal, contained the host, and documented IOCs and MITRE mapping. |
 
 ---
 
@@ -45,6 +46,7 @@ authentication logs ingested for analysis and detection.
 - **Detection engineering** — writing SPL queries, extracting fields with `rex`,
   building detection rules and scheduled alerts, tuning thresholds (false positives
   vs. false negatives)
+- **SOC alert triage** — investigating alerts on a SOC platform (LetsDefend): endpoint/process review, threat intelligence lookups (VirusTotal), host containment, and IOC documentation
 - **Threat frameworks** — mapping investigations to MITRE ATT&CK tactics and techniques
 - **Incident reporting** — structured investigation reports separating facts from
   hypotheses
